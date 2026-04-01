@@ -1,0 +1,54 @@
+{
+  "name": "nas-cloud-backend",
+  "version": "3.0.0",
+  "description": "Private cloud NAS server — AES-256-GCM + zstd streaming, JWT RS256, SQLite WAL",
+  "main": "src/server.js",
+  "scripts": {
+    "start":             "node src/server.js",
+    "dev":               "nodemon src/server.js",
+    "migrate":           "node src/scripts/migrate.js",
+    "generate-cert":     "node src/scripts/generate-cert.js",
+    "generate-keys":     "node src/scripts/generate-keys.js",
+    "verify-backup":     "node src/scripts/verify-backup.js",
+    "restore-db":        "node src/scripts/restore-db.js",
+    "restore-files":     "node src/scripts/restore-files.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@mongodb-js/zstd":     "^2.0.0",
+    "bcrypt":               "^5.1.1",
+    "better-sqlite3":       "^11.0.0",
+    "cookie-parser":        "^1.4.6",
+    "cors":                 "^2.8.5",
+    "csrf-csrf":            "^3.0.3",
+    "dotenv":               "^16.4.5",
+    "express":              "^4.19.2",
+    "express-async-errors": "^3.1.1",
+    "express-rate-limit":   "^7.3.1",
+    "express-validator":    "^7.1.0",
+    "file-type":            "^18.7.0",
+    "helmet":               "^7.1.0",
+    "jsonwebtoken":         "^9.0.2",
+    "lru-cache":            "^10.2.2",
+    "multer":               "^2.0.0",
+    "node-cache":           "^5.1.2",
+    "node-cron":            "^3.0.3",
+    "nodemailer":           "^6.9.14",
+    "pino":                 "^9.2.0",
+    "tar-stream":           "^3.1.7",
+    "uuid":                 "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  },
+  "optionalDependencies": {
+    "pino-pretty": "^11.2.1"
+  },
+  "notes": {
+    "@mongodb-js/zstd": "Requires Python 3 and C++ build tools (node-gyp) for npm install. Run: npm install --build-from-source",
+    "better-sqlite3":   "Also requires C++ build tools for native binding compilation.",
+    "bcrypt":           "Native module — requires node-gyp and Python."
+  }
+}
