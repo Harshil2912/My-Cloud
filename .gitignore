@@ -4,6 +4,8 @@
 
 # ─── Secrets & Certs ─────────────────────────────────────────────────────────
 backend/.env
+backend/.env.*
+backend/.env.local
 certs/
 **/*.pem
 **/*.key
@@ -11,6 +13,10 @@ certs/
 **/*.pfx
 
 # ─── Data directories (uploaded files, database, backups) ────────────────────
+backend/data/
+backend/data/uploads/
+backend/backups/
+backend/logs/
 data/
 backups/
 logs/
